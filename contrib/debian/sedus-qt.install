@@ -1,0 +1,6 @@
+usr/local/bin/sedus-qt usr/bin
+share/pixmaps/sedus32.xpm usr/share/pixmaps
+share/pixmaps/sedus16.xpm usr/share/pixmaps
+share/pixmaps/sedus128.png usr/share/pixmaps
+debian/sedus-qt.desktop usr/share/applications
+debian/sedus-qt.protocol usr/share/kde4/services/

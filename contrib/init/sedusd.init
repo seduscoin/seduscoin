@@ -1,0 +1,67 @@
+#!/bin/bash
+#
+#  sedusd The Sedus Core server.
+#
+#
+# chkconfig: 345 80 20
+# description: sedusd
+# processname: sedusd
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/sedusd, see below
+if [ -f /etc/sysconfig/sedusd ]; then
+        . /etc/sysconfig/sedusd
+fi
+
+RETVAL=0
+
+prog=sedusd
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/sedusd
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/sedusd}
+
+# sedusd defaults to /usr/bin/sedusd, override with BITCOIND_BIN
+sedusd=${BITCOIND_BIN-/usr/bin/sedusd}
+
+# sedusd opts default to -disablewallet, override with BITCOIND_OPTS
+sedusd_opts=${BITCOIND_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $sedusd $sedusd_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac

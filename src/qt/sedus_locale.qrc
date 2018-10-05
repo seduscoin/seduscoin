@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/sedus_bg.qm</file>
+        <file alias="de">locale/sedus_de.qm</file>
+        <file alias="en">locale/sedus_en.qm</file>
+        <file alias="es">locale/sedus_es.qm</file>
+        <file alias="fi">locale/sedus_fi.qm</file>
+        <file alias="fr">locale/sedus_fr.qm</file>
+        <file alias="it">locale/sedus_it.qm</file>
+        <file alias="ja">locale/sedus_ja.qm</file>
+        <file alias="pl">locale/sedus_pl.qm</file>
+        <file alias="pt">locale/sedus_pt.qm</file>
+        <file alias="ru">locale/sedus_ru.qm</file>
+        <file alias="sk">locale/sedus_sk.qm</file>
+        <file alias="sv">locale/sedus_sv.qm</file>
+        <file alias="vi">locale/sedus_vi.qm</file>
+        <file alias="zh_CN">locale/sedus_zh_CN.qm</file>
+        <file alias="zh_TW">locale/sedus_zh_TW.qm</file>
+    </qresource>
+</RCC>

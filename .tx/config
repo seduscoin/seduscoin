@@ -1,0 +1,7 @@
+[main]
+host = https://www.transifex.com
+
+[sedus.qt-translation-012x]
+file_filter = src/qt/locale/sedus_<lang>.ts
+source_file = src/qt/locale/sedus_en.ts
+source_lang = en
